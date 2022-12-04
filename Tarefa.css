@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+    text-align: center;
+}
+fieldset{
+    border-radius: 10px;
+    border-color: antiquewhite;
+    margin: auto;
+}
+button, input{
+    border-radius: 10px;
+}
+label, legend{
+    color: aliceblue;
+}
