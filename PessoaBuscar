@@ -1,0 +1,29 @@
+package br.ifpr.execucao;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+import br.ifpr.dao.PessoaDAO;
+import br.ifpr.modelo.Pessoa;
+
+public class PessoaBuscar {
+		
+		public static void main(String[] args) throws IOException, NumberFormatException, SQLException{
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			
+			System.out.println("Informe o Id: ");
+			String id = reader.readLine();
+			
+			PessoaDAO pessDAO = new PessoaDAO();
+			Pessoa pess = pessDAO.buscar(Integer.parseInt(id));
+			
+			if(pess == null){
+				System.out.println("Pessoa não encontrada!");
+			
+			}else
+				System.out.println(pess.retornaDadosPessoas());	
+
+	}
+
+}
