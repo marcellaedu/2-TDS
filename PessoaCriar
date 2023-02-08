@@ -1,0 +1,45 @@
+package br.ifpr.execucao;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+import br.ifpr.dao.PessoaDAO;
+import br.ifpr.modelo.Pessoa;
+
+public class PessoaCriar {
+
+	public static void main(String[] args) throws IOException, SQLException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		
+		Pessoa pess = new Pessoa();
+		
+		System.out.println("Informe: ");
+		System.out.println();
+		System.out.println("Nome: ");
+		String nome = reader.readLine();
+		pess.setNome(nome);
+		
+		System.out.println("Email: ");
+		String email = reader.readLine();
+		pess.setEmail(email);
+		
+		System.out.println("Telefone: ");
+		String telefone = reader.readLine();
+		pess.setTelefone(telefone);
+		
+		System.out.println("Altura: ");
+		String altura = reader.readLine();
+		pess.setAltura(Float.parseFloat(altura));
+		
+		System.out.println("Peso: ");
+		String peso = reader.readLine();
+		pess.setPeso(Float.parseFloat(peso));
+		
+		PessoaDAO dao = new PessoaDAO();
+		dao.inserirPessoa(pess);
+		
+		System.out.println("Pessoa inserido com sucesso!");
+	}
+
+}
