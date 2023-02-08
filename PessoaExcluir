@@ -1,0 +1,36 @@
+package br.ifpr.execucao;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.SQLException;
+
+import br.ifpr.dao.PessoaDAO;
+import br.ifpr.modelo.Pessoa;
+
+
+
+public class PessoaExcluir {
+
+	public static void main(String[] args) throws IOException, NumberFormatException, SQLException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("Informe o Id da pessoa a ser excluida: ");
+		String id = reader.readLine();
+		Integer idInt = Integer.parseInt(id);
+		
+		PessoaDAO pessDAO = new PessoaDAO();
+		Pessoa pess = pessDAO.buscar(Integer.parseInt(id));
+		
+		if(pess != null){
+			pessDAO.excluir(idInt);
+			System.out.println("Pessoa excluida com sucesso!");
+		}else {
+			System.out.println("A pessoa de id = "+ id +" não encontrado.");
+		
+	
+
+	}
+
+  }
+}
