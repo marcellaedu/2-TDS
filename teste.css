@@ -1,0 +1,57 @@
+body{
+    background-image: url("https://images4.alphacoders.com/682/682860.jpg");
+   
+    font-style: italic;
+    margin: 0%;
+}
+#container{
+    
+    margin: 0;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 60px 835px 50px ;
+    grid-template-areas: "divCabecalho divCabecalho divCabecalho"
+                        "divMenu divConteudo divParte"
+                        "divRodape divRodape divRodape";
+}
+#cabecalho{
+    color: #eee;
+    grid-area: divCabecalho;
+    text-align: center;
+}
+#menu{
+    grid-area: divMenu;
+    margin: 7px;
+}
+#conteudo{
+    border-radius: 30px;
+    grid-area: divConteudo;
+   margin-left: 10px;
+    margin: 7px;
+}
+table{
+    background-color: rgb(156, 33, 33);
+}
+.botao {
+	background: rgb(156, 33, 33);
+	color:rgb(255, 238, 226);
+	border: 0px solid rgb(214, 175, 175);
+	border-radius: 20px;
+	text-shadow: none;
+}
+.botao:hover {
+	background: rgb(156, 33, 33);
+	color: #fff;
+	border: 0px solid #eee;
+	border-radius: 20px;
+	text-shadow: none;
+}
+#parte{
+    grid-area: divParte;
+    margin: 7px;
+}
+#rodape{
+    color: #eee;
+    grid-area: divRodape;
+    text-align: right;
+}
